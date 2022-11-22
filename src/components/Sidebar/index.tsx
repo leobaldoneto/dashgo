@@ -11,7 +11,7 @@ export default function Sidebar () {
           <NavLink icon={RiDashboardLine}>Dashboard</NavLink>
           <NavLink icon={RiContactsLine}>Usuários</NavLink>
         </NavSection>
-        <NavSection title="Automação">
+        <NavSection title="AUTOMAÇÃO">
         <NavLink icon={RiInputMethodLine}>Formulários</NavLink>
         <NavLink icon={RiGitMergeLine}>Automação</NavLink>
         </NavSection>
