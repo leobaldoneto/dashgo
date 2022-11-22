@@ -6,16 +6,11 @@ interface ProfileProps{
 
 export default function Profile({ showProfileData = true }: ProfileProps) {
   return (
-    <Flex 
-      align='center'
-    >
+    <Flex align='center'>
       { showProfileData && (
         <Box mr='4' textAlign='right'>
           <Text>Leobaldo Alcantara Neto</Text>
-          <Text
-            color='gray.300'
-            fontSize='small'
-          >
+          <Text color='gray.300' fontSize='small'>
             leobaldoneto@gmail.com
           </Text>
         </Box>
@@ -23,9 +18,9 @@ export default function Profile({ showProfileData = true }: ProfileProps) {
 
       <Avatar
         size='md'
-        name='Diego Fernandes'
+        name='Leobaldo Alcantara Neto'
         src='https://github.com/leobaldoneto.png'
-      ></Avatar>
+      />
     </Flex>
   );
 }
