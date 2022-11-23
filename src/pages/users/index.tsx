@@ -21,9 +21,10 @@ export default function UserList() {
           <Flex mb='8' justify='space-between' align='center'>
             <Heading size='lg' fontWeight='normal'>Usuários</Heading>
 
-            <Link href='/users/create'>
+
               <Button 
-                as='a' 
+                as={Link} 
+                href='/users/create'
                 size='sm' 
                 fontSize='sm' 
                 colorScheme='pink' 
@@ -31,7 +32,7 @@ export default function UserList() {
                 >
                 Criar novo
               </Button>
-            </Link>
+
 
           </Flex>
 
@@ -60,7 +61,8 @@ export default function UserList() {
                 { isWideVersion && <Td>02 de Novembro, 2022</Td> }
                 <Td>
                   <Button 
-                    as='a' 
+                    as={Link}
+                    href='#'
                     size='sm' 
                     fontSize='sm' 
                     colorScheme='purple' 
@@ -83,7 +85,8 @@ export default function UserList() {
                 { isWideVersion && <Td>02 de Novembro, 2022</Td> }
                 <Td>
                   <Button 
-                    as='a' 
+                    as={Link}
+                    href='#'
                     size='sm' 
                     fontSize='sm' 
                     colorScheme='purple' 
@@ -106,7 +109,8 @@ export default function UserList() {
                 { isWideVersion && <Td>02 de Novembro, 2022</Td> }
                 <Td>
                   <Button 
-                    as='a' 
+                    as={Link} 
+                    href='#'
                     size='sm' 
                     fontSize='sm' 
                     colorScheme='purple' 
@@ -129,7 +133,8 @@ export default function UserList() {
                 { isWideVersion && <Td>02 de Novembro, 2022</Td> }
                 <Td>
                   <Button 
-                    as='a' 
+                    as={Link} 
+                    href='#'
                     size='sm' 
                     fontSize='sm' 
                     colorScheme='purple' 
