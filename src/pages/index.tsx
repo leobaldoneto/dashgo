@@ -12,7 +12,7 @@ interface SignInFormData {
 const signInFormSchema = object({
   email: string().required('E-mail obrigatório').email('E-mail inválido'),
   password: string().required('Senha obrigatória'),
-})
+});
 
 export default function SignIn() {
   const { register, handleSubmit, formState } = useForm({ resolver: yupResolver(signInFormSchema) });
