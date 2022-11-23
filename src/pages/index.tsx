@@ -1,5 +1,5 @@
 import { Button, Flex, Stack } from '@chakra-ui/react';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { object, string } from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Input from '../components/Form/input';
@@ -15,7 +15,7 @@ const signInFormSchema = object({
 });
 
 export default function SignIn() {
-  const { register, handleSubmit, formState } = useForm({ resolver: yupResolver(signInFormSchema) });
+  const { register, handleSubmit, formState } = useForm<SignInFormData>({ resolver: yupResolver(signInFormSchema) });
 
   const { errors } = formState;
 

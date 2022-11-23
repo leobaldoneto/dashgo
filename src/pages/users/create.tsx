@@ -1,5 +1,5 @@
 import { Box, Button, Divider, Flex, Heading, HStack, SimpleGrid, useFormErrorStyles, VStack } from "@chakra-ui/react";
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { object, ref, string } from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 
@@ -24,13 +24,13 @@ const createUserFormSchema = object({
 })
 
 export default function CreateUser() {
-  const { register, handleSubmit, formState } = useForm({
+  const { register, handleSubmit, formState } = useForm<CreateUserFormData>({
     resolver: yupResolver(createUserFormSchema)
   });
 
   const {errors} = formState;
 
-  const handleCreateUser: SubmitHandler<CreateUserFormData> = async (data) => {
+  const handleCreateUser: SubmitHandler<FieldValues> = async (data) => {
     await new Promise(resolve => setTimeout(resolve, 2000));  
 
     console.log(data);
