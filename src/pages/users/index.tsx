@@ -6,13 +6,13 @@ import { useQuery } from '@tanstack/react-query';
 import Header from "../../components/Header";
 import Pagination from "../../components/Pagination";
 import Sidebar from "../../components/Sidebar";
+import { api } from '../../services/api';
 
 export default function UserList() {
-  const { data, isLoading, error } = useQuery({
+  const { data, isLoading, isRefetching, error } = useQuery({
     queryKey: ['users'], 
     queryFn: async () => {
-      const response = await fetch('http://localhost:3000/api/users');
-      const data = await response.json();
+      const { data } = await api.get('users'); 
       const users = data.users.map(user => {
         return {
           id: user.id,
@@ -41,7 +41,10 @@ export default function UserList() {
 
         <Box flex='1' borderRadius={8} bg='gray.800' p='8'>
           <Flex mb='8' justify='space-between' align='center'>
-            <Heading size='lg' fontWeight='normal'>Usuários</Heading>
+            <Heading size='lg' fontWeight='normal'>
+              Usuários
+              { isRefetching && <Spinner size='sm' color='gray.500' ml='4' />}  
+            </Heading>
 
 
               <Button 
