@@ -65,7 +65,7 @@ export default function UserList() {
                 </Tr>
               </Thead>
               <Tbody>
-                {data.map(user => {
+                {data?.map(user => {
                   return (
                     <Tr key={user.id}>
                       <Td px={['4','4', '6']}>

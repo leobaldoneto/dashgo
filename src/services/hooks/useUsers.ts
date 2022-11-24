@@ -8,8 +8,12 @@ interface User {
   createdAt: string;
 }
 
+interface GetUserData {
+  users: User[];
+}
+
 export async function getUsers(): Promise<User[]> {
-  const { data } = await api.get('users'); 
+  const { data } = await api.get<GetUserData>('users'); 
   const users = data.users.map(user => {
     return {
       id: user.id,
